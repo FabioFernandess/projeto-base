@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<!-- Required meta tags -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-table@1.23.5/dist/bootstrap-table.min.css">
+		<!-- Custom CSS -->
+		<link rel="stylesheet" href="{{ base_url }}/css/skeleton.css">
+    
+    <title>{{ pageTitle }}</title>
+</head>
+
+<body>
+<main>
+	<nav class="navbar navbar-expand-md navbar-light bg-light rounded">
+		<div class="container">
+			<a class="navbar-brand" href="{{ url_for('home') }}">Slim 4 Skeleton</a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+					aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+					<li class="nav-item{% if is_current_url('home') %} active{% endif %}">
+						<a class="nav-link" href="{{ url_for('home') }}">
+							{% if is_current_url('home') %}
+								<strong>Home</strong>
+							{% else %}
+								Home
+							{% endif %}
+						</a>
+					</li>
+					<li class="nav-item{% if is_current_url('blog', {id: '1'}) %} active{% endif %}">
+						<a class="nav-link " href="{{ url_for('blog', {id: '1'}) }}">
+							{% if is_current_url('blog', {id: '1'}) %}
+								<strong>Blog</strong>
+							{% else %}
+								Blog
+							{% endif %}
+						</a>
+					</li>
+					<li class="nav-item{% if is_current_url('apiInfo') %} active{% endif %}">
+						<a class="nav-link" href="{{ url_for('apiInfo') }}">
+							{% if is_current_url('apiInfo') %}
+								<strong>API</strong>
+							{% else %}
+								API
+							{% endif %}
+						</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="{{ full_url_for('health') }}">
+							Health
+						</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="{{ full_url_for('home') }}404">
+							404
+						</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="{{ full_url_for('error') }}">
+							500
+						</a>
+					</li>
+					{%if uinfo %}
+					<li class="nav-item">
+						<a class="nav-link" href="{{ full_url_for('admin') }}">
+							Admin
+						</a>
+					</li>
+					{% endif %}
+					<li class="nav-item">
+						<a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+					</li>
+				</ul>
+				<div>
+					{%if uinfo %}
+						{{ uinfo.lastname }} {{ uinfo.firstname }}
+						<a class="btn btn-outline-success my-2 my-sm-0" href="{{ url_for('logout') }}">Logout</a>
+					{% else %}
+						<a class="btn btn-outline-success my-2 my-sm-0" href="{{ url_for('login') }}">Login</a>
+					{% endif %}
+				</div>
+			</div>
+		</div>
+	</nav>
+
+	<div class="container">
+		{% if flash %}
+			{% for f in flash %}
+				<div class="alert alert-warning alert-dismissible fade show" role="alert">
+					{{ f }}
+					<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+				</div>
+			{% endfor %}
+		{% endif %}
+
+		{% block contents %}
+		{% endblock %}
+	</div>
+</main>
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap-table@1.23.5/dist/bootstrap-table.min.js"></script>
+{% block scripts %}{% endblock %}
+</body>
+</html>
