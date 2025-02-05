@@ -1,35 +1,41 @@
-# Slim 4 MVC Skeleton
+# Slim Framework 4 - Design Patterns
 
-[![Codacy Badge](https://app.codacy.com/project/badge/Grade/62644bc058af464eb2cfcf564c3500d6)](https://www.codacy.com/gh/semhoun/slim-skeleton-mvc/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=semhoun/slim-skeleton-mvc&amp;utm_campaign=Badge_Grade) [![Latest Stable Version](https://poser.pugx.org/semhoun/slim-skeleton-mvc/v/stable)](https://packagist.org/packages/semhoun/slim-skeleton-mvc) [![Total Downloads](https://poser.pugx.org/semhoun/slim-skeleton-mvc/downloads)](https://packagist.org/packages/semhoun/slim-skeleton-mvc) [![Latest Unstable Version](https://poser.pugx.org/semhoun/slim-skeleton-mvc/v/unstable)](https://packagist.org/packages/semhoun/slim-skeleton-mvc) [![License](https://poser.pugx.org/semhoun/slim-skeleton-mvc/license)](https://packagist.org/packages/semhoun/slim-skeleton-mvc) [![Monthly Downloads](https://poser.pugx.org/semhoun/slim-skeleton-mvc/d/monthly)](https://packagist.org/packages/semhoun/slim-skeleton-mvc)
+![Slim Framework](https://www.slimframework.com/assets/images/slim-logo.png)
 
-This is a simple web application skeleton project that uses the [Slim4 Framework](http://www.slimframework.com/):
-* [PHP-DI](http://php-di.org/) as dependency injection container
-* [Slim-Psr7](https://github.com/slimphp/Slim-Psr7) as PSR-7 implementation
-* [Doctrine](https://github.com/doctrine/orm) as ORM
-* [Twig](https://twig.symfony.com/) as template engine
-* [Monolog](https://github.com/Seldaek/monolog)
-* [Symfony Console](https://github.com/symfony/console)
-* [Proxy Detection](https://github.com/akrabat/proxy-detection-middleware)
-* [PHP Insights](https://phpinsights.com/) and [Rector](https://getrector.com/) for code quality
+## 📌 Sobre o Projeto
+Este projeto foi desenvolvido para colocar em prática os principais **Design Patterns** utilizando o **Slim Framework 4**.
 
+## 🚀 Tecnologias Utilizadas
+- **PHP 8+**
+- **Slim Framework 4**
+- **Composer**
+- **PSR-7, PSR-11 e PSR-15**
 
-## Prepare
+## 📖 Design Patterns Aplicados
+Este projeto implementa diversos padrões de projeto, incluindo:
 
-1. Create your project:
+- **Singleton**: Gerenciamento de instâncias únicas (Ex: Conexão com banco de dados)
+- **Factory Method**: Criação de objetos de forma encapsulada
+- **Repository Pattern**: Abstração de acesso a dados
+- **Service Layer**: Separação da lógica de negócios
+- **Dependency Injection**: Injeção de dependências para desacoplamento
+- **Middleware Pattern**: Manipulação de requisições HTTP
+- **Observer**: Implementação de eventos e notificações
+- **Strategy**: Comportamentos dinâmicos para funcionalidades específicas
+
+## 📦 Instalação e Execução
+### 1️⃣ Clonar o repositório:
 ```bash
-composer create-project semhoun/slim-skeleton-mvc [your-app]
+git clone https://github.com/FabioFernandess/projeto-base.git
+cd seu-repositorio
 ```
-2. Create database (inside your-app): `./console.php migrations:migrate`
+### 2️⃣ Instalar dependências:
+```bash
+composer install
+```
+### 3️⃣ Executar o servidor embutido:
+```bash
+php -S localhost:8080 -t public
+```
+A API estará disponível em: **http://localhost:8080**
 
-
-## Run it:
-
-1. `cd [your-app]`
-2. `php -S 0.0.0.0:8888 -t public/`
-3. Browse to http://localhost:8888
-
-
-## Notice
-
-- Set `var` folder permission to writable when deploy to production environment
-- Default login/password is *admin*/*admin*# projeto-base
