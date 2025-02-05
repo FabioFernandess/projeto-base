@@ -1,6 +1,6 @@
 # Slim Framework 4 - Design Patterns
 
-![Slim Framework](https://www.slimframework.com/assets/images/slim-logo.png)
+![Slim Framework](https://canada1.discourse-cdn.com/flex030/uploads/slimframework/original/1X/704c3a9a7ce53ea7d06952ff4a33cf945e68ac4e.png)
 
 ## 📌 Sobre o Projeto
 Este projeto foi desenvolvido para colocar em prática os principais **Design Patterns** utilizando o **Slim Framework 4**.
